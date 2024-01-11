@@ -21,6 +21,14 @@ return require('packer').startup(function(use)
 		end
 	})
 
+    use ({
+        'folke/tokyonight.nvim',
+        as = 'tokyonight',
+        config = function()
+            vim.cmd('colorscheme tokyonight-storm')
+        end
+    })
+
 	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use ('nvim-treesitter/playground')
 	use ('ThePrimeagen/harpoon')
