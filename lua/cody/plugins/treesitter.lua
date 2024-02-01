@@ -1,3 +1,4 @@
+-- look through primeagen to see what i want to change
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -23,6 +24,7 @@ return {
                     "c",
                     "vimdoc",
                     "vim",
+                    "rust",
                 }
             })
         end
