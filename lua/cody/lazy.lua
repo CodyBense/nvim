@@ -15,7 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 -- require("lazy").setup("cody.plugins")
 require("lazy").setup({ { import = "cody.plugins" } }, {
     install = {
-        colorscheme = { "tokyonight-storm" },
+        -- colorscheme = { "tokyonight-storm" },
+        colorscheme = { "gruvobx" },
     },
     checker = {
         enabled = true,
