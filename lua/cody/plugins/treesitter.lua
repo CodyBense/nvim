@@ -25,6 +25,7 @@ return {
                     "vimdoc",
                     "vim",
                     "rust",
+                    "go",
                 }
             })
         end
