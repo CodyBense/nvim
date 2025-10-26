@@ -1,4 +1,5 @@
-return{
+return {
+
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -11,9 +12,18 @@ return{
         end,
     },
     {
-        'williamboman/mason.nvim',
+        'mason-org/mason.nvim',
         lazy = false,
         config = true,
+        opts = {
+            ui = {
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗"
+                }
+            }
+        }
     },
 
     -- Autocompletion
@@ -21,7 +31,7 @@ return{
         'hrsh7th/nvim-cmp',
         event = 'InsertEnter',
         dependencies = {
-            {'L3MON4D3/LuaSnip'},
+            { 'L3MON4D3/LuaSnip' },
         },
         config = function()
             -- Here is where you configure the autocompletion settings.
@@ -48,11 +58,11 @@ return{
     -- LSP
     {
         'neovim/nvim-lspconfig',
-        cmd = {'LspInfo', 'LspInstall', 'LspStart'},
-        event = {'BufReadPre', 'BufNewFile'},
+        cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
+        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'williamboman/mason-lspconfig.nvim'},
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'williamboman/mason-lspconfig.nvim' },
         },
         config = function()
             -- This is where all the LSP shenanigans will live
@@ -64,18 +74,19 @@ return{
             lsp_zero.on_attach(function(client, bufnr)
                 -- see :help lsp-zero-keybindings
                 -- to learn the available actions
-                lsp_zero.default_keymaps({buffer = bufnr})
+                lsp_zero.default_keymaps({ buffer = bufnr })
             end)
 
             require('mason-lspconfig').setup({
                 ensure_installed = {
-                    'rust_analyzer',
-                    'lua_ls',
-                    'jedi_language_server',
-                    'gopls'
-                    -- 'tsserver',
-                    -- 'eslint',
-                    -- 'pyright',
+                    "arduino_language_server",
+                    "clangd",
+                    "bashls",
+                    "gopls",
+                    "lua_ls",
+                    "pylsp",
+                    "rust_analyzer",
+
                 },
                 handlers = {
                     lsp_zero.default_setup,

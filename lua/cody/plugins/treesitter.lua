@@ -12,10 +12,6 @@ return {
                 indent = { enable = true },
                 ensure_installed = {
                     "json",
-                    "javascript",
-                    "typescript",
-                    "html",
-                    "css",
                     "lua",
                     "python",
                     "c",
@@ -23,6 +19,8 @@ return {
                     "vim",
                     "rust",
                     "go",
+                    "markdown",
+                    "markdown_inline",
                 }
             })
         end

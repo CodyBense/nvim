@@ -38,5 +38,7 @@ keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
 keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 
 keymap.set("n", "<leader>f", ":Pick files<CR>")
+keymap.set("n", "<leader>s", ":Pick grep_live<CR>")
 keymap.set("n", "<leader>gf", ":Pick files tool='git'<CR>")
+keymap.set("n", "<leader>gs", ":Pick grep_live tool='git'<CR>")
 keymap.set("n", "<leader>h", ":Pick help<CR>")
